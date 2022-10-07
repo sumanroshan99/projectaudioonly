@@ -80,7 +80,7 @@ const createPeerConnection = () => {
   // receiving tracks
   const remoteStream = new MediaStream();
   store.setRemoteStream(remoteStream);
-  //ui.updateRemoteVideo(remoteStream);
+  ui.updateRemoteVideo(remoteStream);
 
   peerConection.ontrack = (event) => {
     remoteStream.addTrack(event.track);
