@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <title>Meet the strangers</title>
+        <link rel='stylesheet' href='./css/style.css'>
+    </head>
+    <body>
+    <div class="nav">
+        <div class="grandinfowts">
+            <div class="socialmedia">
+                <div class="facebook"><img src="utils/images/facebook.png" alt=""></div>
+                <div class="insta"><img src="utils/images/instagram.png" alt=""></div>
+
+                <div class="twitter"><img src="utils/images/twitter.png" alt=""></div>
+            </div>
+            <div class="grandtotalusers">
+                <div id="total-strangers">0  </div> <span class="plus">+</span><div class="userconnected">online now</div>
+    
+            </div>
+        </div>
+        
+        
+        
+    </div>    
+
+
+
+
+        
+        <div class='main_container'>
+            <div class="parent-dashboard">
+            <div class='dashboard_container'>
+                    <div class='logo_container'>
+                         <a href="index.html"><img src='./utils/images/logo.png'></img></a>
+                     </div>
+            
+                    <div class='description_container'>
+                         <p class='description_container_paragraph'>
+                        Talk with other user by passing his personal code or talk with strangers!
+                         </p>
+                    </div>
+                    <div class='personal_code_container'>
+                         <div class='personal_code_title_container'>
+                            <p class='personal_code_title_paragraph'>
+                             Your personal code
+                            </p>
+                         </div>
+                         <div class="personal_code_value_container">
+                            <p class='personal_code_value_paragraph' id='personal_code_paragraph'>DDDDDD</p>
+                            <button class='personal_code_copy_button' id='personal_code_copy_button'>
+                                   <img src='./utils/images/copyButton.png'></img>
+                            </button>
+                         </div>
+                    </div>
+                
+                    <div class='personal_code_connecting_container'>
+                                     <p class='personal_code_connecting_paragraph'>Personal Code</p>
+                             <div class='personal_code_connecting_input_container'>
+                                    <input class='personal_code_input' id='personal_code_input'></input>
+                             </div>
+                             <div class='personal_code_connecting_buttons_container'>
+                                     <button class='connecting_button' id='personal_code_chat_button'>
+                                               <img src='./utils/images/chatButton.png' class='connecting_buttons_image'></img>
+                                    </button>
+                                    <button class='connecting_button display_none' id='personal_code_video_button'>
+                                            <img src='./utils/images/videoButton.png' class='connecting_buttons_image'></img>
+                                    </button>
+                            </div>
+                    </div>
+                    <div class='stranger_connecting_container'>
+                            <p class='stranger_title_container'>Stranger</p>
+                            <div class='stranger_buttons_container'>
+                                 <button class='connecting_button' id='stranger_chat_button'>
+                                      <img src='/utils/images/chatButton.png' class='connecting_buttons_image'></img>
+                                 </button>
+                                 <button class='connecting_button display_none' >
+                                       <img src='/utils/images/videoButton.png' class='connecting_buttons_image'></img>
+                                 </button>
+                             </div>
+                    </div>
+                    <div class='checkbox_container'>
+                           <div class='checkbox_connection' id='allow_strangers_checkbox'>
+                                    <img id='allow_strangers_checkbox_image' class='display_none' src='./utils/images/check.png'></img>
+                           </div>
+                                     <p class='checkbox_container_paragraph'>Allow connection from strangers</p>
+                    </div>
+                           <div class='dashboard_blur display_none' id='dashboard_blur'></div>
+            
+
+            </div>  
+        </div>
+
+        <!-----------Dashboard container end here-------->  
+        <div id='dialog'></div>    
+    </div>
+ 
+    <div class="grand_call_container">
+        
+            <div class='call_container'>
+                           
+                            <div class="alertboxes">
+                                
+                                    
+                                    <div id="alert_disconnect" class="alert_disconnect display_none">
+                                        <div>You or your partner has disconnected... </div>
+                   
+                                    </div>
+                                    <div id="alert_positive" class="alert_positive display_none">
+                                        <div class="urconnected">You are now connected to a random user</div>
+                                        <div class="speaknow">You can send text or Speak now...</div>
+
+                                    </div>
+                                    <div class="instruction">Make sure your headfone & mike is connected...</div>
+                            </div>
+                            
+                            <div class='messenger_container'>
+                               
+                                <div class="stranger_typing" id="stranger_typing">
+                                    <div class="strangertypingdialog" id="strangertypingdialog" >
+                                        Stranger is typing...
+                                    </div>
+                                </div>
+
+                                <div class='messages_container' id='messages_container'>
+                                    
+                                  
+
+                                </div>
+                                <div class='new_message_container ' id='new_message'>
+                                    
+                                    <button class='call_button_large display_none' id='hang_up_button'>
+                                        Stop <br> <p>Press Esc </p> 
+                                    </button>
+                               
+                                    <button class='call_button_large' id='stranger_video_button' >
+                                        New <br> <p>Press Esc </p>
+                                    </button>
+                                    <input class='new_message_input' id='new_message_input' type='text' placeholder="Type your message here..."></input>
+                                    <button class='send_message_button' id='send_message_button'>
+                                        Send 
+                                    </button>
+                                </div>
+                                
+                            </div>
+                            
+                    
+                  
+            </div>        
+       
+    </div>
+
+       
+    <div class='videos_container'>
+                
+        <div class='remote_video_container_disable'>
+         <video class='remote_video '  autoplay id='remote_video'></video>
+         </div>
+
+         <div class='local_video_container_disable' >
+             
+             <div class='call_buttons_container ' id='call_buttons'></div>
+             <video class='local_video' id='local_video' muted autoplay></video>
+         </div>
+    </div>  
+        
+        
+        <script src='/socket.io/socket.io.js'></script>
+        <script src='./js/elements.js' type='module'></script>
+        <script src='./js/constants.js' type='module'></script>
+        <script src='./js/ui.js' type='module'></script>
+        <script src='./js/wss.js' type='module'></script>
+        <script src='./js/store.js' type='module'></script>
+        <script src='./js/webRTCHandler.js' type='module'></script>
+        <script src='./js/recordingUtils.js' type='module'></script>
+        <script src='./js/strangerUtils.js' type='module'></script>
+        <script src='./js/main.js' type='module'></script>
+      
+</body>
+</html>
